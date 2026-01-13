@@ -5,14 +5,15 @@ class Solution {
 public:
     int countStudents(vector<int>& students, vector<int>& sandwiches) {
         int count0 = 0, count1 = 0;
+
         for (int s : students) {
             if (s == 0) count0++;
             else count1++;
         }
 
-     
-        for (int s : sandwiches) {
-            if (s == 0) {
+        
+        for (int sw : sandwiches) {
+            if (sw == 0) {
                 if (count0 == 0) break;
                 count0--;
             } else {
@@ -21,7 +22,6 @@ public:
             }
         }
 
-      
         return count0 + count1;
     }
 };
